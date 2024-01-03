@@ -1,28 +1,25 @@
-import sys
-input = sys.stdin.readline
+def bfs():  # bfs
 
-def backtrack(i, j, cnt):
-    global max_cnt
-    global visited
+    queue = set([])  # 시간초과 방지를 위해 집합 사용
+    max_cnt = 0
+    queue.add((0, 0, board[0][0]))
 
-    if cnt > max_cnt:
-        max_cnt = cnt
+    while queue:
+        i, j, visited_list = queue.pop()
 
-    for di, dj in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
-        ni, nj = i + di, j + dj
-        if 0 <= ni < R and 0 <= nj < C:
-            idx = ord(board[ni][nj]) - 65
-            if not alpha_list[idx]:
-                alpha_list[idx] = True
-                backtrack(ni, nj, cnt + 1)
-                alpha_list[idx] = False
+        max_cnt = max(max_cnt, len(visited_list))
 
-R, C = map(int, input().split())
-board = [list(str(input())) for _ in range(R)]
-alpha_list = [False] * 26
-alpha_list[ord(board[0][0]) - 65] = True
-max_cnt = 0
+        # 상하좌우 델타 탐색 진행
+        for di, dj in (0, 1), (1, 0), (0, -1), (-1, 0):
+            ni, nj = i + di, j + dj
+            # visited_list에 탐색 좌표의 알파벳이 없다면
+            # 해당 알파벳 추가 후 queue에 추가
+            if 0 <= ni < r and 0 <= nj < c and not board[ni][nj] in visited_list:
+                queue.add((ni, nj, visited_list + board[ni][nj]))
 
-backtrack(0, 0, 1)
+    return max_cnt
 
-print(max_cnt)
+r, c = map(int, input().split())
+board = [list(str(input())) for _ in range(r)]
+
+print(bfs())
