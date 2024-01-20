@@ -6,12 +6,14 @@
 ex)
 ```
 ./SILVER/S4_1158_요세푸스 문제.py
+./SILVER/S3_9095_1, 2, 3 더하기.java
 ```
 
 ### commit convention
-* 'YYMMDD {알고리즘 분류}'
+* ~~'YYMMDD {알고리즘 분류}'~~
+* 'YYMMDD {알고리즘 분류} {(사용 언어)}'
 
 ex)
 ```
-231231 큐
+240120 DP (java)
 ```
