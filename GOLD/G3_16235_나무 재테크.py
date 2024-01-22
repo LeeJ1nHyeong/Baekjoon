@@ -66,6 +66,7 @@ for _ in range(k):
 
 ans = 0  # k년 후 남아있는 나무의 그루 수
 
+# 남아 있는 나무 탐색
 for i in range(n):
     for j in range(n):
         ans += len(trees[i][j])
