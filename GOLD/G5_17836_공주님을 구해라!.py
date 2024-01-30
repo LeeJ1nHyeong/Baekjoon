@@ -11,6 +11,7 @@ def bfs():  # bfs
             if 0 <= ni < n and 0 <= nj < m and move < t:
                 if ni == n - 1 and nj == m - 1:  # 공주 좌표에 도달하면 move + 1을 return
                     return move + 1
+                
                 # 그람 보유 여부에 따라 조건 분기
                 # 그람 미보유
                 if not gram:
