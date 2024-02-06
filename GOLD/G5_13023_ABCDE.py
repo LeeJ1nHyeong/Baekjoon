@@ -24,7 +24,7 @@ for _ in range(m):
 visited = [0] * (n + 1)  # 방문 표시용
 
 ans = 0
-# 방문하지 않은 노드를 시작점으로하여 백트래킹 진행
+# 방문하지 않은 노드를 시작점으로 하여 백트래킹 진행
 for i in range(1, n + 1):
     visited[i] = 1
     backtrack(i, visited, 1)
