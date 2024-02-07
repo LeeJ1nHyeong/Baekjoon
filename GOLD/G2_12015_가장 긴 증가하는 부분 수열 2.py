@@ -25,4 +25,4 @@ for i in range(1, n):
     elif num_list[i] < increase_list[-1]:
         binary_search(0, len(increase_list) - 1, num_list[i])
 
-print(len(increase_list))
+print(len(increase_list))  # 가장 긴 증가 부분 수열의 길이 출력
