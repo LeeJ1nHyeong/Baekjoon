@@ -28,7 +28,7 @@ def bfs():
                 x_num += 1
 
     # 물건 개수를 바탕으로 생성한 방문 표시용 3차원 리스트
-    # 비트마스킹 값으로 활용하므로 2 ** (x + 1) - 1 개로 생성
+    # 비트마스킹 값을 활용하므로 2 ** (x + 1) - 1 개로 생성
     visited = [[[0 for _ in range(2 ** (x + 1) - 1)] for _ in range(n)] for _ in range(m)]
 
     visited[si][sj][0] = 1  # 시작 좌표 방문 표시
