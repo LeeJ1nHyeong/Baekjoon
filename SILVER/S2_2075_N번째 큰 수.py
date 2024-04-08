@@ -15,5 +15,4 @@ for _ in range(n):
                 heapq.heappop(heap)
                 heapq.heappush(heap, num)
 
-heap.sort()  # 오름차순 정렬
 print(heap[0])  # heap 내의 최솟값(N번째 큰 수) 출력
