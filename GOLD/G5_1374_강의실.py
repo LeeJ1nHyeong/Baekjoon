@@ -12,7 +12,6 @@ for _ in range(n):
 lectures.sort()  # 시작 시간을 기준으로 오름차순 정렬
 
 heap = []  # 우선순위 큐
-
 for start, end in lectures:
     # heap이 비어있거나 최솟값이 시작 시간보다 크다면 종료 시간 heappush
     if not heap or heap[0] > start:
