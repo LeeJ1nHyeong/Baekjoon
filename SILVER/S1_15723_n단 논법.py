@@ -1,7 +1,7 @@
 from collections import deque
 
 
-# bfs
+## BFS 이용
 def bfs(s, e):
     # bfs 초기 세팅
     queue = deque([s])
@@ -43,3 +43,31 @@ for _ in range(m):
     sentence = input()
     from_alpha, to_alpha = ord(sentence[0]) - 97, ord(sentence[-1]) - 97
     print(bfs(from_alpha, to_alpha))
+
+
+
+## 플로이드-워셜 이용
+n = int(input())
+graph = [[0] * 26 for _ in range(26)]  # 알파벳 사이의 경로 저장용 리스트
+
+# 각 문장의 시작 알파벳과 끝 알파벳을 아스키 코드로 적절하게 변환하여 graph 저장
+for _ in range(n):
+    sentence = input()
+    from_alpha, to_alpha = ord(sentence[0]) - 97, ord(sentence[-1]) - 97
+    graph[from_alpha][to_alpha] = 1
+
+# 두 알파벳 사이에 중간 경로가 있는지 확인
+for k in range(26):
+    for i in range(26):
+        for j in range(26):
+            if graph[i][k] and graph[k][j]:
+                graph[i][j] = 1
+
+# 각 결론이 참인지 거짓인지 판별
+m = int(input())
+for _ in range(m):
+    sentence = input()
+    from_alpha, to_alpha = ord(sentence[0]) - 97, ord(sentence[-1]) - 97
+
+    # 경로가 존재하면 "T", 존재하지 않다면 "F" 출력
+    print("T" if graph[from_alpha][to_alpha] else "F")
