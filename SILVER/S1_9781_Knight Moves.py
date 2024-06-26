@@ -17,6 +17,7 @@ def bfs():
     while queue:
         ci, cj, move = queue.popleft()
 
+        # 목적지에 도달했다면 이동 횟수 return
         if board[ci][cj] == "X":
             return move
 
