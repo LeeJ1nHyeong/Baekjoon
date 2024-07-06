@@ -7,4 +7,5 @@ for i in range(1, len(s)):
     if s[i] != s[i - 1]:
         reverse[int(s[i])] += 1
 
-print(min(reverse))  # 두 수 중 최솟값을 출력
+# 두 수 중 최솟값을 출력
+print(min(reverse))
