@@ -1,6 +1,5 @@
 n = int(input())
 first_word = list(input())  # 첫번째 단어
-
 ans = 0  # 첫번째 단어와 비슷한 단어 개수
 
 # 이 후의 단어를 첫번째 단어와 비교
