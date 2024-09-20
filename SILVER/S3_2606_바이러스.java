@@ -12,8 +12,10 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         int m = Integer.parseInt(br.readLine());
 
-        int[][] board = new int[n + 1][n + 1];
         int[] visited = new int[n + 1];
+
+        /* 풀이 1 : 2차원 배열 사용 */
+        int[][] board = new int[n + 1][n + 1];
 
         int count = 0;
 
@@ -50,6 +52,44 @@ public class Main {
                 visited[i] = 1;
                 count++;
                 queue.add(i);
+            }
+        }
+
+        /* 풀이 2: 2차원 리스트 사용 */
+        ArrayList<ArrayList<Integer>> board = new ArrayList<>();
+
+        for (int i = 0; i < n + 1; i++) {
+            board.add(new ArrayList<>());
+        }
+
+        int count = 0;
+
+        for (int i = 0; i < m; i++) {
+            s = br.readLine();
+            st = new StringTokenizer(s);
+
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+
+            board.get(a).add(b);
+            board.get(b).add(a);
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(1);
+        visited[1] = 1;
+
+        while (!queue.isEmpty()) {
+            int now = queue.remove();
+
+            for (int computer : board.get(now)) {
+                if (visited[computer] == 1) {
+                    continue;
+                }
+
+                visited[computer] = 1;
+                count++;
+                queue.add(computer);
             }
         }
 
