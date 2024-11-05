@@ -12,6 +12,7 @@ for i in range(n):
         if visited[i][j]:
             continue
 
+        # bfs 초기 세팅
         queue = deque([(i, j)])
         visited[i][j] = 1
 
