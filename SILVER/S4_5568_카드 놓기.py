@@ -25,7 +25,7 @@ for i in range(n):
 print(len(new_numbers))
 
 
-# 라이브러리 itertool 이용 (44 ms)
+# 라이브러리 itertools 이용 (44 ms)
 import itertools
 
 for i in list(itertools.permutations(numbers, k)):
