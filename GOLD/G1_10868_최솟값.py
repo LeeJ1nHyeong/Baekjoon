@@ -20,7 +20,7 @@ def interval_min(start, end, index, left, right):
     if left > end or right < start:
         return 1e10
     
-    # 범위가 포함되어 있다면 현재 구간의 최솟값 return
+    # 현재 구간이 범위 내에 포함되어 있다면 현재 구간의 최솟값 return
     if left <= start and right >= end:
         return segment_tree[index]
     
