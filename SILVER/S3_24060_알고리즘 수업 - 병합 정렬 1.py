@@ -1,3 +1,5 @@
+# 병합 정렬 구현
+
 def merge_sort(lst, p, r):
     if p < r:
         q = (p + r) // 2
