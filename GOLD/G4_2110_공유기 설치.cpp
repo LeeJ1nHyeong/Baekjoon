@@ -49,7 +49,6 @@ int main() {
 		else {
 			end = mid - 1;
 		}
-
 	}
 
 	cout << ans;
